@@ -15,6 +15,7 @@ namespace Midterm_Project_for_Group
             {
                 string foodLine = menu.ReadLine();
                 string costLine = menu.ReadLine();
+
                 MenuItem item = new MenuItem(foodLine, costLine);
                 mcMenu.Add(item);
                 if (foodLine == null)
@@ -29,6 +30,7 @@ namespace Midterm_Project_for_Group
 
 
         }
+
         public static void Option1ShowList(List<MenuItem> foodMenu)
         {
             foreach (MenuItem line in foodMenu)
@@ -41,7 +43,7 @@ namespace Midterm_Project_for_Group
     class MenuItem
     {
         public string itemName;
-        public double itemCost;
+        public string itemCost;
         public bool itemMealDeal = false;
         public string menuLine;
 
@@ -49,13 +51,13 @@ namespace Midterm_Project_for_Group
         public MenuItem(string itemName, string cost)
         {
             this.itemName = itemName;
-            this.itemCost = double.Parse(cost);
+            this.itemCost = cost;
             this.menuLine = MenuLine(itemName, itemCost);
         }
-        public static string MenuLine(string name, double cost)
+        public static string MenuLine(string name, string cost)
         {
-            string costString = cost.ToString();
-            return string.Format("{0,20}{1,4}", name, costString);
+            string costString = cost;
+            return string.Format("{0,30}{1,20}", name, costString);
         }
     }
 }
