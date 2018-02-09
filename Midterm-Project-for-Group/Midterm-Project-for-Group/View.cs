@@ -16,6 +16,22 @@ namespace Midterm_Project_for_Group
                 Console.WriteLine("That is not a valid Menu option");
                 MainMenu();
             }
+            else if (userC == 1)
+            {
+
+            }
+            else if (userC == 2)
+            {
+
+            }
+            else if (userC == 3)
+            {
+
+            }
+            else
+            {
+
+            }
 
         }
 

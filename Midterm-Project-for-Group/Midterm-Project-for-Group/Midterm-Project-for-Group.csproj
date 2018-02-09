@@ -42,8 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OrderBasket.cs" />
+    <Compile Include="FoodMenu.cs" />
+    <Compile Include="IPayment.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recipt.cs" />
     <Compile Include="View.cs" />
   </ItemGroup>
   <ItemGroup>

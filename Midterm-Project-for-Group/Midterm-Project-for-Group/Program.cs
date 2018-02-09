@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Midterm_Project_for_Group
 {
@@ -6,6 +7,7 @@ namespace Midterm_Project_for_Group
     {
         static void Main(string[] args)
         {
+            List<MenuItem> mcMenu = FoodMenu();
             Console.WriteLine("Welcome to the McDonald's AI Kiosk");
             View.MainMenu();
         }
