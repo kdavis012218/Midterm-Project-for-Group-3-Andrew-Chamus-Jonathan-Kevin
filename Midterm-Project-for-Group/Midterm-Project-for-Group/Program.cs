@@ -9,6 +9,7 @@ namespace Midterm_Project_for_Group
         {
             List<MenuItem> mcMenu = FoodMenu.MakeFoodMenu();
             Console.WriteLine("Welcome to the McDonald's AI Kiosk");
+            //MenuItem objects have a double value called itemCost;
             View.MainMenu(mcMenu);
         }
     }
