@@ -11,6 +11,7 @@ namespace Midterm_Project_for_Group
             Console.WriteLine("Welcome to the McDonald's AI Kiosk");
             //MenuItem objects have a double value called itemCost;
             View.MainMenu(mcMenu);
+
         }
     }
 }

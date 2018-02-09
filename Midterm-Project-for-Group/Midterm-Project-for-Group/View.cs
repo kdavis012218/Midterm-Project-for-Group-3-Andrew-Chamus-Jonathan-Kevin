@@ -20,6 +20,7 @@ namespace Midterm_Project_for_Group
             else if (userC == 1)
             {
                 FoodMenu.Option1ShowList(mcMenu);
+                MainMenu(mcMenu);
             }
             else if (userC == 2)
             {

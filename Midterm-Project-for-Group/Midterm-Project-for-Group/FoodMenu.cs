@@ -53,6 +53,7 @@ namespace Midterm_Project_for_Group
             {
                 Console.WriteLine(line.menuLine);
             }
+
         }
     }
 
