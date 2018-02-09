@@ -1,9 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 namespace Midterm_Project_for_Group
 {
     class View
     {
-        public static void MainMenu()
+        public static void MainMenu(List<MenuItem> mcMenu)
         {
             Console.WriteLine("Here are your  Options");
             Console.WriteLine("1. View Menu");
@@ -14,11 +15,11 @@ namespace Midterm_Project_for_Group
             if (userChoice == false || userC < 1 || userC > 4)
             {
                 Console.WriteLine("That is not a valid Menu option");
-                MainMenu();
+                MainMenu(mcMenu);
             }
             else if (userC == 1)
             {
-
+                FoodMenu.Option1ShowList(mcMenu);
             }
             else if (userC == 2)
             {

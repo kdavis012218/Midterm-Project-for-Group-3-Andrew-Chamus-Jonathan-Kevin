@@ -9,7 +9,7 @@ namespace Midterm_Project_for_Group
         {
             List<MenuItem> mcMenu = FoodMenu.MakeFoodMenu();
             Console.WriteLine("Welcome to the McDonald's AI Kiosk");
-            View.MainMenu();
+            View.MainMenu(mcMenu);
         }
     }
 }

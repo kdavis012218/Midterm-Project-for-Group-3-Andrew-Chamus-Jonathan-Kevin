@@ -8,7 +8,7 @@ namespace Midterm_Project_for_Group
 
         public static List<MenuItem> MakeFoodMenu()
         {
-            string path = @"C: \Users\Grand Circus Student\source\repos\Midterm - Project -for-Group - 3 - Andrew - Chamus - Jonathan - Kevin\McMenu.txt";
+            string path = @"C:\Users\Grand Circus Student\source\repos\Midterm-Project-for-Group-3-Andrew-Chamus-Jonathan-Kevin\McMenu.txt";
             List<MenuItem> mcMenu = new List<MenuItem>();
             StreamReader menu = new StreamReader(path);
             while (true)
@@ -29,6 +29,13 @@ namespace Midterm_Project_for_Group
 
 
         }
+        public static void Option1ShowList(List<MenuItem> foodMenu)
+        {
+            foreach (MenuItem line in foodMenu)
+            {
+                System.Console.WriteLine(line.menuLine);
+            }
+        }
     }
 
     class MenuItem
@@ -43,7 +50,12 @@ namespace Midterm_Project_for_Group
         {
             this.itemName = itemName;
             this.itemCost = double.Parse(cost);
+            this.menuLine = MenuLine(itemName, itemCost);
         }
-        public static MenuLine()
+        public static string MenuLine(string name, double cost)
+        {
+            string costString = cost.ToString();
+            return string.Format("{0,20}{1,4}", name, costString);
+        }
     }
 }
