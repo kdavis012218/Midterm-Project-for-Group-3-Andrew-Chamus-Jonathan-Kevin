@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Midterm_Project_for_Group
 {
@@ -10,6 +6,8 @@ namespace Midterm_Project_for_Group
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Welcome to the McDonald's AI Kiosk");
+            View.MainMenu();
         }
     }
 }
