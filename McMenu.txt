@@ -1,0 +1,10 @@
+Big Mac,3.99
+Mac Junior,2.29
+Grand Big Mac,4.59
+Double Cheeseburger,1.79
+Triple Cheeseburger,3.00
+Quarter Pounder With Cheese, 3.89
+Medium French Fries,1.99
+Small French Frie,1.39
+Large French Frie,2.39
+Medum Drink, 1.00
