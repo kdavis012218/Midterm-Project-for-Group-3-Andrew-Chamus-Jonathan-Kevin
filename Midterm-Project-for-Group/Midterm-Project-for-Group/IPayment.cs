@@ -95,11 +95,8 @@ namespace Midterm_Project_for_Group
             }
 
         }
-        public static double CalcTax(double subTotal)
-        {
-            double tax = 0.06;
-            return tax * subTotal;
-        }
+
+
         public static double CalcSubTotal(List<MenuItem> orderBasket)
         {
             double subTotal = 0;
@@ -108,6 +105,11 @@ namespace Midterm_Project_for_Group
                 subTotal += item.itemCost;
             }
             return subTotal;
+        }
+        public static double CalcTax(double subTotal)
+        {
+            double tax = 0.06;
+            return tax * subTotal;
         }
     }
 }

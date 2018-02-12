@@ -6,34 +6,28 @@ namespace Midterm_Project_for_Group
     {
         public static void ViewList(List<MenuItem> orderBasket)
         {
+            int x = 1;
             foreach (MenuItem item in orderBasket)
             {
-                Console.WriteLine(item.menuLine);
+
+                Console.WriteLine(x + item.menuLine);
+                x++;
             }
         }
         public static void RemoveOrder(List<MenuItem> mcMenu, List<MenuItem> orderBasket)
         {
-
-
             {
-
                 Console.WriteLine("Which item would you like to remove?");
                 string input = Console.ReadLine();
-                bool removeFood = int.TryParse(input, out int f);
-                foreach (MenuItem item in orderBasket)
+                if (int.TryParse(input, out int f))
                 {
-                    if (f == item.menuNumber)
-                    {
-                        orderBasket.Remove(item);
-                    }
-                    else
-                    {
-                        Console.WriteLine("This is not a valid input");
-                        View.MainMenu(mcMenu, orderBasket);
-                    }
-
+                    orderBasket.RemoveAt(f - 1);
                 }
-
+                else
+                {
+                    Console.WriteLine("This is not a valid input");
+                    View.MainMenu(mcMenu, orderBasket);
+                }
             }
         }
     }

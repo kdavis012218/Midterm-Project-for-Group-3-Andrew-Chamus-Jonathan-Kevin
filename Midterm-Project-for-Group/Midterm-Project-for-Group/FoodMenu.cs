@@ -47,7 +47,7 @@ namespace Midterm_Project_for_Group
         public string description;
         public double itemCost;
         public string menuLine;
-        public int menuNumber;
+
         public MenuItem(string itemName, string catagory, string description, double cost, int x)
         {
             //This is our MenuItem Constructor
@@ -55,14 +55,13 @@ namespace Midterm_Project_for_Group
             this.catagory = catagory;
             this.description = description;
             this.itemCost = cost;
-            this.menuNumber = x;
-            this.menuLine = MenuLine(itemName, itemCost, description, this.menuNumber);
+            this.menuLine = MenuLine(itemName, itemCost, description);
         }
-        public static string MenuLine(string name, double cost, string description, int x)
+        public static string MenuLine(string name, double cost, string description)
         {
             //This method will constuct the menuLine. This is used only for presenting all of the MenuItem objects' instance variables at once.
             string costString = cost.ToString();
-            return string.Format("{0,1}{1,30}{2,20}\n{3}\n" + "\n", x, name, costString, description);
+            return string.Format("{0,1}{1,30}\n{2,20}\n" + "\n", name, costString, description);
         }
     }
 }
