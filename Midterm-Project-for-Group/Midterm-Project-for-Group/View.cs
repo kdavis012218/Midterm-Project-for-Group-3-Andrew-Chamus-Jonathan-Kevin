@@ -36,9 +36,13 @@ namespace Midterm_Project_for_Group
             else
             {
                 double subTotal = PaymentOptions.CalcSubTotal(orderBasket);
+                Console.WriteLine("SubTotal =  " + subTotal);
                 double tax = PaymentOptions.CalcTax(subTotal);
+                Console.WriteLine("Tax =  " + tax);
                 double total = subTotal + tax;
+                Console.WriteLine("Your total is =  " + total);
                 string reciptLine = PaymentOptions.Payment_Options(total);
+                Console.WriteLine(reciptLine);
                 Recipt recipt = new Recipt();
             }
 

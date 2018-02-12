@@ -43,6 +43,7 @@ namespace Midterm_Project_for_Group
 
     class PaymentOptions
     {
+
         public static string Payment_Options(double total)
         {
             string reciptLine = "";
@@ -53,7 +54,7 @@ namespace Midterm_Project_for_Group
             if (paymentmethod == "cash")
             {
                 double pay = CashPayment.CalcAmount();
-                Console.WriteLine("Amount tendered" + pay);
+                Console.WriteLine("Amount tendered " + pay);
                 CashPayment.Approval(pay, total);
                 CashPayment.Change(pay, total);
                 reciptLine = ("Cash Payment of " + pay + " out of " + total);
