@@ -24,8 +24,10 @@ namespace Midterm_Project_for_Group
             }
             else if (userC == 2)
             {
-
+                OrderBasket.AddOrder(mcMenu, orderBasket);
+                MainMenu(mcMenu, orderBasket, customerNumber);
             }
+
             else if (userC == 3)
             {
                 OrderBasket.ViewList(orderBasket);

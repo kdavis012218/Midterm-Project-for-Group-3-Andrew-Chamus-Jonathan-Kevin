@@ -27,6 +27,8 @@ namespace Midterm_Project_for_Group
                     break;
                 }
             }
+            //this gets rid of the oddball menu item
+            mcMenu.RemoveAt(13);
             return mcMenu;
         }
         public static void Option1ShowList(List<MenuItem> foodMenu)

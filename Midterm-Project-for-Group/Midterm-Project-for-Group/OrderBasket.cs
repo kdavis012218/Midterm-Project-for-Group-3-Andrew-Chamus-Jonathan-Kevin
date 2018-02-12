@@ -35,5 +35,31 @@ namespace Midterm_Project_for_Group
                 }
             }
         }
+        public static void AddOrder(List<MenuItem> mcMenu, List<MenuItem> orderBasket)
+        {
+            string order;
+            string quantity;
+            FoodMenu.Option1ShowList(mcMenu);
+            Console.WriteLine("Which item number would you like to add?");
+            order = Console.ReadLine();
+            Console.WriteLine("How many Would you like?");
+            quantity = Console.ReadLine();
+            if (int.TryParse(order, out int x) && int.TryParse(quantity, out int y))
+            {
+                x = x - 1;
+                for (int i = 0; i < y; i++)
+                {
+                    orderBasket.Add(mcMenu[x]);
+                }
+            }
+            Console.WriteLine();
+            foreach (MenuItem line in orderBasket)
+            {
+                Console.WriteLine(line.menuLine);
+            }
+
+        }
+
+
     }
 }

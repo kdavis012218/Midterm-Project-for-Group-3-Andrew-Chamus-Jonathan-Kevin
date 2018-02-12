@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 
 namespace Midterm_Project_for_Group
@@ -24,11 +25,13 @@ namespace Midterm_Project_for_Group
                         writer.WriteLine(item.itemName + "\t\t" + item.itemCost);
 
                     }
-                    customerNumber++;
-                    System.Console.WriteLine(customerNumber);
+
                     writer.WriteLine(reciptLine);
                     writer.Close();
                     run = false;
+                    Process.Start("Customer" + customerNumber + ".txt");
+                    customerNumber++;
+
                 }
 
             }
@@ -46,7 +49,7 @@ namespace Midterm_Project_for_Group
 //            file.Close();
 
 //            StreamWriter recipt = new StreamWriter(path + i + ".txt");
-//            Process.Start("Customer_Number_" + i);
+//           
 
 //            System.Console.WriteLine(reciptLine);
 //            i++;
