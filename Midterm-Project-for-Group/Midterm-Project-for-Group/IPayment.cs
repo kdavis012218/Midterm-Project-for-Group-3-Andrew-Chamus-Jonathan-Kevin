@@ -4,16 +4,26 @@ namespace Midterm_Project_for_Group
 {//Kevin
     interface IPayment
     {
-        bool Approval();
+        bool Approval(double pay, double subTotal);
         double CalcAmount();
     }
     class CashPayment : IPayment
     {
         double amount;
 
-        public bool Approval()
+        public bool Approval(double cash, double subTotal)
         {
-            throw new System.NotImplementedException();
+            bool approved = false;
+            if (cash >= subTotal)
+            {
+                approved = true;
+            }
+            else
+            {
+                Console.WriteLine("That is not enough");
+                CalcAmount();
+            }
+            return approved;
         }
 
         public double CalcAmount()
@@ -22,14 +32,32 @@ namespace Midterm_Project_for_Group
             bool maybePay = double.TryParse(Console.ReadLine(), out double paying);
             return paying;
         }
+
+        public double Change(double cash, double totalBill)
+        {
+            double change = totalBill - cash;
+            return change;
+        }
+
     }
     class CardPayment : IPayment
     {
         double amount;
 
-        public bool Approval()
+        public bool Approval(double pay, double subTotal)
         {
-            throw new System.NotImplementedException();
+
+            bool approved = false;
+            if (pay >= subTotal)
+            {
+                approved = true;
+            }
+            else
+            {
+                Console.WriteLine("That is not enough");
+                CalcAmount();
+            }
+            return approved;
         }
 
         public double CalcAmount()
@@ -42,10 +70,21 @@ namespace Midterm_Project_for_Group
     class CheckPayment : IPayment
     {
         double amount;
+        int checkNumber;
 
-        public bool Approval()
+        public bool Approval(double pay, double subTotal)
         {
-            throw new System.NotImplementedException();
+            bool approved = false;
+            if (pay >= subTotal)
+            {
+                approved = true;
+            }
+            else
+            {
+                Console.WriteLine("That is not enough");
+                CalcAmount();
+            }
+            return approved;
         }
 
         public double CalcAmount()
