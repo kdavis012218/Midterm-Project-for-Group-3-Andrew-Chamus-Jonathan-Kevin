@@ -4,7 +4,7 @@ namespace Midterm_Project_for_Group
 {
     class View
     {
-        public static void MainMenu(List<MenuItem> mcMenu)
+        public static void MainMenu(List<MenuItem> mcMenu, List<MenuItem> orderBasket)
         {
             Console.WriteLine("Here are your  Options");
             Console.WriteLine("1. View Menu");
@@ -15,12 +15,12 @@ namespace Midterm_Project_for_Group
             if (userChoice == false || userC < 1 || userC > 4)
             {
                 Console.WriteLine("That is not a valid Menu option");
-                MainMenu(mcMenu);
+                MainMenu(mcMenu, orderBasket);
             }
             else if (userC == 1)
             {
                 FoodMenu.Option1ShowList(mcMenu);
-                MainMenu(mcMenu);
+                MainMenu(mcMenu, orderBasket);
             }
             else if (userC == 2)
             {
@@ -28,7 +28,9 @@ namespace Midterm_Project_for_Group
             }
             else if (userC == 3)
             {
-
+                OrderBasket.RemoveOrder(orderBasket);
+                OrderBasket.ViewList(orderBasket);
+                MainMenu(mcMenu, orderBasket);
             }
             else
             {

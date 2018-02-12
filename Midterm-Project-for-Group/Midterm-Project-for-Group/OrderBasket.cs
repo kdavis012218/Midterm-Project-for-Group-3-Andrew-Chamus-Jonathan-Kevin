@@ -4,30 +4,37 @@ namespace Midterm_Project_for_Group
 {//Andrew
     class OrderBasket
     {
-        public static List<MenuItem> RemoveOrder(List<MenuItem> mcMenu)
+        public static void ViewList(List<MenuItem> orderBasket)
         {
-            bool run = true;
-            while (run == true)
+            foreach (MenuItem item in orderBasket)
             {
-                int x = 0;
-                foreach (MenuItem item in mcMenu)
-                {
-                    Console.WriteLine(x + "  " + item);
-                    x++;
-                }
+                Console.WriteLine(item.menuLine);
+            }
+        }
+        public static void RemoveOrder(List<MenuItem> mcMenu, List<MenuItem> orderBasket)
+        {
+
+
+            {
+
                 Console.WriteLine("Which item would you like to remove?");
                 string input = Console.ReadLine();
-                if (int.TryParse(input, out int f) && f <= mcMenu.Count)
+                bool removeFood = int.TryParse(input, out int f);
+                foreach (MenuItem item in orderBasket)
                 {
-                    mcMenu.RemoveAt(f);
-                    run = false;
+                    if (f == item.menuNumber)
+                    {
+                        orderBasket.Remove(item);
+                    }
+                    else
+                    {
+                        Console.WriteLine("This is not a valid input");
+                        View.MainMenu(mcMenu, orderBasket);
+                    }
+
                 }
-                else
-                {
-                    Console.WriteLine("Invalid Input");
-                }
+
             }
-            return mcMenu;
         }
     }
 }

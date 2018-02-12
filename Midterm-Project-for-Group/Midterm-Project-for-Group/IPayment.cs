@@ -9,8 +9,6 @@ namespace Midterm_Project_for_Group
     }
     class CashPayment : IPayment
     {
-        double amount;
-
         public bool Approval(double cash, double subTotal)
         {
             bool approved = false;
@@ -69,7 +67,6 @@ namespace Midterm_Project_for_Group
     }
     class CheckPayment : IPayment
     {
-        double amount;
         int checkNumber;
 
         public bool Approval(double pay, double subTotal)
