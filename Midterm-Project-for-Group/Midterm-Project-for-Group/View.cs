@@ -38,17 +38,19 @@ namespace Midterm_Project_for_Group
             else
             {
                 double subTotal = PaymentOptions.CalcSubTotal(orderBasket);
-                Console.WriteLine("SubTotal =  " + subTotal);
                 double tax = PaymentOptions.CalcTax(subTotal);
-                Console.WriteLine("Tax =  " + tax);
                 double total = subTotal + tax;
+
+
+                Console.WriteLine("SubTotal =  " + subTotal);
+                Console.WriteLine("Tax =  " + tax);
                 Console.WriteLine("Your total is =  " + total);
                 string reciptLine = PaymentOptions.Payment_Options(total);
                 Console.WriteLine(reciptLine);
                 //
                 //Recipt is added to the Bin file/debug file//
                 //
-                Recipt customerRecipt = new Recipt(orderBasket, reciptLine, customerNumber);
+                Recipt customerRecipt = new Recipt(orderBasket, reciptLine, customerNumber, tax, subTotal);
             }
             orderBasket = new List<MenuItem>();
             Continue(mcMenu, orderBasket, customerNumber);

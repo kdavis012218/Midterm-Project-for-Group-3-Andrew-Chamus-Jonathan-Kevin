@@ -10,10 +10,10 @@ namespace Midterm_Project_for_Group
     }
     class CashPayment
     {
-        public static bool Approval(double cash, double subTotal)
+        public static bool Approval(double cash, double total)
         {
             bool approved = false;
-            if (cash >= subTotal)
+            if (cash >= total)
             {
                 approved = true;
             }
@@ -28,13 +28,18 @@ namespace Midterm_Project_for_Group
         public static double CalcAmount()
         {
             Console.WriteLine("How much would you like to pay?");
-            bool maybePay = double.TryParse(Console.ReadLine(), out double paying);
+            if (double.TryParse(Console.ReadLine(), out double paying))
+            {
+                return paying;
+            }
+            CalcAmount();
             return paying;
         }
 
         public static double Change(double cash, double totalBill)
         {
             double change = totalBill - cash;
+            Console.WriteLine("Here is your change: " + change);
             return change;
         }
 

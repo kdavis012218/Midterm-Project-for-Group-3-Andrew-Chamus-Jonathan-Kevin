@@ -39,7 +39,7 @@ namespace Midterm_Project_for_Group
         {
             string order;
             string quantity;
-            FoodMenu.Option1ShowList(mcMenu);
+            ViewList(orderBasket);
             Console.WriteLine("Which item number would you like to add?");
             order = Console.ReadLine();
             Console.WriteLine("How many Would you like?");
@@ -53,11 +53,7 @@ namespace Midterm_Project_for_Group
                 }
             }
             Console.WriteLine();
-            foreach (MenuItem line in orderBasket)
-            {
-                Console.WriteLine(line.menuLine);
-            }
-
+            ViewList(orderBasket);
         }
 
 

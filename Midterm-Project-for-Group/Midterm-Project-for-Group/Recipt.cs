@@ -11,7 +11,7 @@ namespace Midterm_Project_for_Group
         static bool run = true;
 
 
-        public Recipt(List<MenuItem> orderBasket, string reciptLine, int customerNumber)
+        public Recipt(List<MenuItem> orderBasket, string reciptLine, int customerNumber, double tax, double subTotal)
         {
             run = true;
 
@@ -20,13 +20,23 @@ namespace Midterm_Project_for_Group
                 using (FileStream filestream = File.Create("Customer" + customerNumber + ".txt"))
                 using (StreamWriter writer = new StreamWriter(filestream))
                 {
+
+                    writer.WriteLine("Thank you customer " + customerNumber + " for dining with us");
+                    writer.WriteLine("Item:\t\t\t Cost");
+                    writer.WriteLine();
                     foreach (MenuItem item in orderBasket)
                     {
                         writer.WriteLine(item.itemName + "\t\t" + item.itemCost);
 
                     }
-
+                    writer.WriteLine();
+                    writer.WriteLine();
+                    writer.WriteLine("\t\t\t\t SubTotal = " + subTotal);
+                    writer.WriteLine("\t\t\t\t Tax = " + tax);
+                    writer.WriteLine();
                     writer.WriteLine(reciptLine);
+                    writer.WriteLine();
+                    writer.WriteLine("Have a great day!");
                     writer.Close();
                     run = false;
                     Process.Start("Customer" + customerNumber + ".txt");
