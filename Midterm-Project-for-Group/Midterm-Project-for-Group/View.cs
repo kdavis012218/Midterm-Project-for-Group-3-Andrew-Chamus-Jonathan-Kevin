@@ -28,13 +28,15 @@ namespace Midterm_Project_for_Group
             }
             else if (userC == 3)
             {
-                OrderBasket.RemoveOrder(orderBasket);
+                OrderBasket.RemoveOrder(mcMenu, orderBasket);
                 OrderBasket.ViewList(orderBasket);
                 MainMenu(mcMenu, orderBasket);
             }
             else
             {
-
+                double total = 1;//add method to calculate taxes/subtotal and total;
+                PaymentOptions.Payment_Options(total);
+                Recipt recipt = new Recipt();
             }
 
         }

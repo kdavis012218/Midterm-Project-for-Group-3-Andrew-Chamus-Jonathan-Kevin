@@ -1,20 +1,52 @@
 Big Mac
+Main
+Consists of two 1.6 oz beef patties, "Special Sauce", iceberg lettuce, American cheese, pickles, and onions, served in a three-part sesame seed bun.
 3.99
 Mac Junior
+Main
+pure beef patty, salt & pepper and special sauce sandwiched between a sesame seed bun. American cheese, crisp lettuce, onions and pickles top it off.
 2.29
 Grand Big Mac
+Main
+Two 100% Irish beef patties, a slice of cheese, lettuce, onion and pickles and Big Mac sauce in a sesame topped bun.
 4.59
 Double Cheeseburger
+Main
+Two 100% beef patties with cheese, onions, pickles, mustard and tomato ketchup in a bun
 1.79
 Triple Cheeseburger
+Main
+Three 100% beef patties with cheese, onions, pickles, mustard and tomato ketchup in a bun
 3.00
 Quarter Pounder With Cheese
-3.89
-Medium French Fries
-1.99
-Small French Fries
+Main
+4.25 oz. beef patty, pickles, raw onion, ketchup, and mustard.
 1.39
 Large French Fries
+Side
+born from premium potatoes.
+3.89
+Medium French Fries
+Side
+zero grams of trans fat.
+1.99
+Small French Fries
+Side
+crispy and golden on the outside and fluffy on the inside.
 2.39
-Medum Drink
+Medium Drink
+Drink
+An ice-cold COKE product of your choice.
 1.00
+Hash browns
+Side
+fluffy on the inside, crispy and toasty on the outside.
+1.00
+Sausage McMuffin
+Main
+Features a warm, freshly toasted English muffin, topped with savory hot sausage and a slice of melty American cheese.
+1.00
+Filet-O-Fish
+Main
+Made with Alaskan Pollock, topped with melty American cheese and creamy tartar sauce, and served on a soft, steamed bun.
+3.69

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Midterm_Project_for_Group
 {//Kevin
@@ -7,9 +8,9 @@ namespace Midterm_Project_for_Group
         bool Approval(double pay, double subTotal);
         double CalcAmount();
     }
-    class CashPayment : IPayment
+    class CashPayment
     {
-        public bool Approval(double cash, double subTotal)
+        public static bool Approval(double cash, double subTotal)
         {
             bool approved = false;
             if (cash >= subTotal)
@@ -24,71 +25,90 @@ namespace Midterm_Project_for_Group
             return approved;
         }
 
-        public double CalcAmount()
+        public static double CalcAmount()
         {
             Console.WriteLine("How much would you like to pay?");
             bool maybePay = double.TryParse(Console.ReadLine(), out double paying);
             return paying;
         }
 
-        public double Change(double cash, double totalBill)
+        public static double Change(double cash, double totalBill)
         {
             double change = totalBill - cash;
             return change;
         }
 
     }
-    class CardPayment : IPayment
+
+
+    class PaymentOptions
     {
-        double amount;
-
-        public bool Approval(double pay, double subTotal)
+        public static string Payment_Options(double total)
         {
+            string reciptLine = "";
+            Console.WriteLine(" What is your payment method");
+            Console.WriteLine("Cash, Check, or Credit?");
+            string paymentmethod = Console.ReadLine().ToLower();
 
-            bool approved = false;
-            if (pay >= subTotal)
+            if (paymentmethod == "cash")
             {
-                approved = true;
+                double pay = CashPayment.CalcAmount();
+                Console.WriteLine("Amount tendered" + pay);
+                CashPayment.Approval(pay, total);
+                CashPayment.Change(pay, total);
+                reciptLine = ("Cash Payment of " + pay + " out of " + total);
+                return reciptLine;
+            }
+
+            else if (paymentmethod == "check")
+            {
+                System.Console.Write("Please enter Check number");
+                string checknumber = Console.ReadLine();
+                Console.WriteLine("Check number verified");
+                Console.WriteLine("Transaction approved");
+                reciptLine = ("Check Payment of " + total + " out of " + total);
+                return reciptLine;
+            }
+
+            else if (paymentmethod == "credit_card" || paymentmethod == "credit" || paymentmethod == "card")
+            {
+                Console.Write("Please enter Card number");
+                string credit_card = Console.ReadLine();
+                Console.WriteLine("Card number verified");
+
+                Console.WriteLine("Please enter expiration date");
+                string expiration_date = Console.ReadLine();
+
+                Console.WriteLine("Please enter security code");
+                string csecurity_code = Console.ReadLine();
+                Console.WriteLine("Transaction approved");
+
+                reciptLine = ("Card ********" + credit_card.PadLeft(4) + " paid " + total + " of " + total);
+                return reciptLine;
+
+
             }
             else
             {
-                Console.WriteLine("That is not enough");
-                CalcAmount();
+                Payment_Options(total);
+                return reciptLine;
             }
-            return approved;
-        }
 
-        public double CalcAmount()
-        {
-            Console.WriteLine("How much would you like to pay?");
-            bool maybePay = double.TryParse(Console.ReadLine(), out double paying);
-            return paying;
         }
-    }
-    class CheckPayment : IPayment
-    {
-        int checkNumber;
-
-        public bool Approval(double pay, double subTotal)
+        public static double CalcTax(double subTotal)
         {
-            bool approved = false;
-            if (pay >= subTotal)
+            double tax = 0.06;
+            return tax * subTotal;
+        }
+        public static double CalcSubTotal(List<MenuItem> orderBasket)
+        {
+            double subTotal = 0;
+            foreach (MenuItem item in orderBasket)
             {
-                approved = true;
+                subTotal += item.itemCost;
             }
-            else
-            {
-                Console.WriteLine("That is not enough");
-                CalcAmount();
-            }
-            return approved;
-        }
-
-        public double CalcAmount()
-        {
-            Console.WriteLine("How much would you like to pay?");
-            bool maybePay = double.TryParse(Console.ReadLine(), out double paying);
-            return paying;
+            return subTotal;
         }
     }
 }
+
