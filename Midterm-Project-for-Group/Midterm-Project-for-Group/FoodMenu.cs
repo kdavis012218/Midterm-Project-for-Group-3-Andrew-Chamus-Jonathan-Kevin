@@ -33,9 +33,11 @@ namespace Midterm_Project_for_Group
         {
             //This Method is called when the ConsoleUser chooses option 1 from the MainMenu
             Console.Clear();
+            int x = 0;
             foreach (MenuItem line in foodMenu)
             {
-                Console.WriteLine(line.menuLine);
+                x++;
+                Console.WriteLine(x + " " + line.menuLine);
             }
         }
     }

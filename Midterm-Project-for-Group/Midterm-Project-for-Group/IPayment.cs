@@ -84,7 +84,7 @@ namespace Midterm_Project_for_Group
                 string csecurity_code = Console.ReadLine();
                 Console.WriteLine("Transaction approved");
 
-                reciptLine = ("Card ********" + credit_card.PadLeft(4) + " paid " + total + " of " + total);
+                reciptLine = ("Card ********" + credit_card.Substring(0, 4) + " paid " + total + " of " + total);
                 return reciptLine;
 
 
@@ -110,7 +110,9 @@ namespace Midterm_Project_for_Group
         public static double CalcTax(double subTotal)
         {
             double tax = 0.06;
-            return tax * subTotal;
+            double sTax = tax * subTotal;
+            sTax = Math.Round(sTax, 2);
+            return sTax;
         }
     }
 }

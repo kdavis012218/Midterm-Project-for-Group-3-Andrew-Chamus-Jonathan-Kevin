@@ -6,13 +6,18 @@ namespace Midterm_Project_for_Group
     {
         public static void ViewList(List<MenuItem> orderBasket)
         {
+            Console.WriteLine("");
+            Console.WriteLine("Your Order: ");
             int x = 1;
+            double sub = 0;
             foreach (MenuItem item in orderBasket)
             {
-
-                Console.WriteLine(x + item.menuLine);
+                sub += item.itemCost;
+                Console.WriteLine(x + " " + item.menuLine);
                 x++;
             }
+            Console.WriteLine();
+            Console.WriteLine("Your SubTotal is : " + sub);
         }
         public static void RemoveOrder(List<MenuItem> mcMenu, List<MenuItem> orderBasket)
         {

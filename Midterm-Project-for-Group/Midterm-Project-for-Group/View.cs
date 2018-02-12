@@ -43,10 +43,34 @@ namespace Midterm_Project_for_Group
                 Console.WriteLine("Your total is =  " + total);
                 string reciptLine = PaymentOptions.Payment_Options(total);
                 Console.WriteLine(reciptLine);
-                Recipt recipt = new Recipt();
+                //
+                //Recipt is added to the Bin file/debug file//
+                //
+                Recipt customerRecipt = new Recipt(orderBasket, reciptLine);
             }
+            orderBasket = new List<MenuItem>();
+            Continue(mcMenu, orderBasket);
+
 
         }
+        public static void Continue(List<MenuItem> mcMenu, List<MenuItem> orderBasket)
+        {
+            Console.WriteLine("Would you like to continue?");
+            if (Console.ReadLine() == "yes")
+            {
+                MainMenu(mcMenu, orderBasket);
+            }
+            else if (Console.ReadLine() == "no")
+            {
+                Console.WriteLine("GoodBye, Thanks for eating at McDonalds");
+                return;
 
+            }
+            else
+            {
+                Console.WriteLine("I'm sorry I do not understand");
+                Continue(mcMenu, orderBasket);
+            }
+        }
     }
 }
