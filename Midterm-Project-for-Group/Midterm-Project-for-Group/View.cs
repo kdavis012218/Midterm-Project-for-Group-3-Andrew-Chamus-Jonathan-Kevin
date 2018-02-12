@@ -4,7 +4,7 @@ namespace Midterm_Project_for_Group
 {
     class View
     {
-        public static void MainMenu(List<MenuItem> mcMenu, List<MenuItem> orderBasket)
+        public static void MainMenu(List<MenuItem> mcMenu, List<MenuItem> orderBasket, int customerNumber)
         {
             Console.WriteLine("Here are your  Options");
             Console.WriteLine("1. View Menu");
@@ -15,12 +15,12 @@ namespace Midterm_Project_for_Group
             if (userChoice == false || userC < 1 || userC > 4)
             {
                 Console.WriteLine("That is not a valid Menu option");
-                MainMenu(mcMenu, orderBasket);
+                MainMenu(mcMenu, orderBasket, customerNumber);
             }
             else if (userC == 1)
             {
                 FoodMenu.Option1ShowList(mcMenu);
-                MainMenu(mcMenu, orderBasket);
+                MainMenu(mcMenu, orderBasket, customerNumber);
             }
             else if (userC == 2)
             {
@@ -29,9 +29,9 @@ namespace Midterm_Project_for_Group
             else if (userC == 3)
             {
                 OrderBasket.ViewList(orderBasket);
-                OrderBasket.RemoveOrder(mcMenu, orderBasket);
+                OrderBasket.RemoveOrder(mcMenu, orderBasket, customerNumber);
                 OrderBasket.ViewList(orderBasket);
-                MainMenu(mcMenu, orderBasket);
+                MainMenu(mcMenu, orderBasket, customerNumber);
             }
             else
             {
@@ -46,19 +46,19 @@ namespace Midterm_Project_for_Group
                 //
                 //Recipt is added to the Bin file/debug file//
                 //
-                Recipt customerRecipt = new Recipt(orderBasket, reciptLine);
+                Recipt customerRecipt = new Recipt(orderBasket, reciptLine, customerNumber);
             }
             orderBasket = new List<MenuItem>();
-            Continue(mcMenu, orderBasket);
+            Continue(mcMenu, orderBasket, customerNumber);
 
 
         }
-        public static void Continue(List<MenuItem> mcMenu, List<MenuItem> orderBasket)
+        public static void Continue(List<MenuItem> mcMenu, List<MenuItem> orderBasket, int customerNumber)
         {
             Console.WriteLine("Would you like to continue?");
             if (Console.ReadLine() == "yes")
             {
-                MainMenu(mcMenu, orderBasket);
+                MainMenu(mcMenu, orderBasket, customerNumber);
             }
             else if (Console.ReadLine() == "no")
             {
@@ -69,7 +69,7 @@ namespace Midterm_Project_for_Group
             else
             {
                 Console.WriteLine("I'm sorry I do not understand");
-                Continue(mcMenu, orderBasket);
+                Continue(mcMenu, orderBasket, customerNumber);
             }
         }
     }

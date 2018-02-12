@@ -8,15 +8,15 @@ namespace Midterm_Project_for_Group
     {
 
         static bool run = true;
-        static int i = 0;
 
-        public Recipt(List<MenuItem> orderBasket, string reciptLine)
+
+        public Recipt(List<MenuItem> orderBasket, string reciptLine, int customerNumber)
         {
-
+            run = true;
 
             while (run == true)
             {
-                using (FileStream filestream = File.Create("Customer" + i + ".txt"))
+                using (FileStream filestream = File.Create("Customer" + customerNumber + ".txt"))
                 using (StreamWriter writer = new StreamWriter(filestream))
                 {
                     foreach (MenuItem item in orderBasket)
@@ -24,8 +24,13 @@ namespace Midterm_Project_for_Group
                         writer.WriteLine(item.itemName + "\t\t" + item.itemCost);
 
                     }
-                    System.Console.WriteLine(reciptLine);
+                    customerNumber++;
+                    System.Console.WriteLine(customerNumber);
+                    writer.WriteLine(reciptLine);
+                    writer.Close();
+                    run = false;
                 }
+
             }
 
         }

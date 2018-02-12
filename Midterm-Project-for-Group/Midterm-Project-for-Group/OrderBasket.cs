@@ -19,7 +19,7 @@ namespace Midterm_Project_for_Group
             Console.WriteLine();
             Console.WriteLine("Your SubTotal is : " + sub);
         }
-        public static void RemoveOrder(List<MenuItem> mcMenu, List<MenuItem> orderBasket)
+        public static void RemoveOrder(List<MenuItem> mcMenu, List<MenuItem> orderBasket, int customerNumber)
         {
             {
                 Console.WriteLine("Which item would you like to remove?");
@@ -31,7 +31,7 @@ namespace Midterm_Project_for_Group
                 else
                 {
                     Console.WriteLine("This is not a valid input");
-                    View.MainMenu(mcMenu, orderBasket);
+                    View.MainMenu(mcMenu, orderBasket, customerNumber);
                 }
             }
         }
