@@ -40,8 +40,9 @@ namespace Midterm_Project_for_Group
 
         public static double Change(double cash, double totalBill)
         {
-            double change = totalBill - cash;
+            double change = cash - totalBill;
             Console.WriteLine("Here is your change: " + change);
+            Math.Round(change, 2);
             return change;
         }
 
