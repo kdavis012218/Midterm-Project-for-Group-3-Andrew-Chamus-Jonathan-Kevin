@@ -6,7 +6,7 @@ namespace Midterm_Project_for_Group
     interface IPayment
     {
         bool Approval(double pay, double subTotal);
-        double CalcAmount();
+        double CalcAmount(double total);
     }
     class CashPayment
     {
@@ -25,15 +25,17 @@ namespace Midterm_Project_for_Group
             return approved;
         }
 
+
+
         public static double CalcAmount()
         {
             Console.WriteLine("How much would you like to pay?");
-            if (double.TryParse(Console.ReadLine(), out double paying))
+            bool works = double.TryParse(Console.ReadLine(), out double pay);
             {
-                return paying;
+                return pay;
             }
-            CalcAmount();
-            return paying;
+
+
         }
 
         public static double Change(double cash, double totalBill)
@@ -60,6 +62,11 @@ namespace Midterm_Project_for_Group
             {
                 double pay = CashPayment.CalcAmount();
                 Console.WriteLine("Amount tendered " + pay);
+                if (pay < total)
+                {
+                    Console.WriteLine("That is not enough");
+                    pay = CashPayment.CalcAmount();
+                }
                 CashPayment.Approval(pay, total);
                 CashPayment.Change(pay, total);
                 reciptLine = ("Cash Payment of " + pay + " out of " + total);

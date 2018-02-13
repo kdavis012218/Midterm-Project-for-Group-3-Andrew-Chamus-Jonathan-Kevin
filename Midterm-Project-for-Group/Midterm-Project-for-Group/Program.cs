@@ -7,6 +7,7 @@ namespace Midterm_Project_for_Group
     {
         static void Main(string[] args)
         {
+
             int customerNumber = 0;
             List<MenuItem> mcMenu = FoodMenu.MakeFoodMenu();
             List<MenuItem> orderBasket = new List<MenuItem>();

@@ -40,7 +40,6 @@ namespace Midterm_Project_for_Group
                     writer.Close();
                     run = false;
                     Process.Start("Customer" + customerNumber + ".txt");
-                    customerNumber++;
 
                 }
 

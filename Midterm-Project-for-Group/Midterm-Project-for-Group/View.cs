@@ -53,6 +53,8 @@ namespace Midterm_Project_for_Group
                 Recipt customerRecipt = new Recipt(orderBasket, reciptLine, customerNumber, tax, subTotal);
             }
             orderBasket = new List<MenuItem>();
+
+            customerNumber++;
             Continue(mcMenu, orderBasket, customerNumber);
 
 
@@ -60,11 +62,12 @@ namespace Midterm_Project_for_Group
         public static void Continue(List<MenuItem> mcMenu, List<MenuItem> orderBasket, int customerNumber)
         {
             Console.WriteLine("Would you like to continue?");
-            if (Console.ReadLine() == "yes")
+            string reply = Console.ReadLine();
+            if (reply == "yes")
             {
                 MainMenu(mcMenu, orderBasket, customerNumber);
             }
-            else if (Console.ReadLine() == "no")
+            else if (reply == "no")
             {
                 Console.WriteLine("GoodBye, Thanks for eating at McDonalds");
                 return;
