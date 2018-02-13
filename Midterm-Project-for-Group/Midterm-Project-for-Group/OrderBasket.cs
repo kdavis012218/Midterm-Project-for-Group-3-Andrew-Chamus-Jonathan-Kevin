@@ -24,7 +24,7 @@ namespace Midterm_Project_for_Group
             {
                 Console.WriteLine("Which item would you like to remove?");
                 string input = Console.ReadLine();
-                if (int.TryParse(input, out int f))
+                if (int.TryParse(input, out int f) && f<= orderBasket.Count)
                 {
                     orderBasket.RemoveAt(f - 1);
                 }
