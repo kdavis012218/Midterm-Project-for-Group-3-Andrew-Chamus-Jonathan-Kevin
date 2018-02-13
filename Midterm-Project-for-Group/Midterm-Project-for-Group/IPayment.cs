@@ -51,7 +51,6 @@ namespace Midterm_Project_for_Group
 
     class PaymentOptions
     {
-
         public static string Payment_Options(double total)
         {
             string reciptLine = "";
@@ -109,8 +108,6 @@ namespace Midterm_Project_for_Group
             }
 
         }
-
-
         public static double CalcSubTotal(List<MenuItem> orderBasket)
         {
             double subTotal = 0;

@@ -7,10 +7,7 @@ namespace Midterm_Project_for_Group
     // jon
     class Recipt
     {
-
         static bool run = true;
-
-
         public Recipt(List<MenuItem> orderBasket, string reciptLine, int customerNumber, double tax, double subTotal)
         {
             run = true;

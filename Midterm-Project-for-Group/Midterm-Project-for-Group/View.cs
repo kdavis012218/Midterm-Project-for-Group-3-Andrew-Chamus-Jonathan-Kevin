@@ -65,6 +65,7 @@ namespace Midterm_Project_for_Group
             string reply = Console.ReadLine();
             if (reply == "yes" || reply == "y")
             {
+                Console.Clear();
                 MainMenu(mcMenu, orderBasket, customerNumber);
             }
             else if (reply == "no" || reply == "n")
