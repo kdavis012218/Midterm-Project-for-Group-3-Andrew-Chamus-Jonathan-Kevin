@@ -63,14 +63,14 @@ namespace Midterm_Project_for_Group
         {
             Console.WriteLine("Would you like to continue?");
             string reply = Console.ReadLine();
-            if (reply == "yes")
+            if (reply == "yes" || reply == "y")
             {
                 MainMenu(mcMenu, orderBasket, customerNumber);
             }
-            else if (reply == "no")
+            else if (reply == "no" || reply == "n")
             {
                 Console.WriteLine("GoodBye, Thanks for eating at McDonalds");
-                return;
+
 
             }
             else
