@@ -49,35 +49,3 @@ namespace Midterm_Project_for_Group
     }
 
 }
-
-
-
-//            File recipt = new File("Customer" + i + ".txt");
-//            StreamReader file = new StreamReader("Customer" + i + ".txt");
-
-//            file.Close();
-
-//            StreamWriter recipt = new StreamWriter(path + i + ".txt");
-//           
-
-//            System.Console.WriteLine(reciptLine);
-//            i++;
-//            run = false;
-
-
-
-//        }
-//            using (StreamWriter CustomerRecord = new StreamWriter(path + ".csv", true))
-//            {
-//                foreach (MenuItem item in orderBasket)
-//                {
-
-//                    CustomerRecord.WriteLine(item.itemCost + "," + item.itemName);
-//                }
-//CustomerRecord.WriteLine(i + ",");
-//            }
-//            List<MenuItem> mcMenu = FoodMenu.MakeFoodMenu();
-
-//        }
-//    }
-//}
